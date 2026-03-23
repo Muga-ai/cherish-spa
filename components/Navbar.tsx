@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { Scissors, Image, Calendar, Phone } from "lucide-react"
 
 export default function Navbar() {
@@ -13,27 +14,27 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
-        <h1 className="text-xl font-bold tracking-wider text-red-500">
+        <Link href="/" className="text-xl font-bold tracking-wider text-red-500">
           Cherish
-        </h1>
+        </Link>
 
         <div className="space-x-8 hidden md:flex text-sm items-center">
 
-          <a href="/services" className="flex items-center gap-2 hover:text-red-500 transition">
+          <Link href="/services" className="flex items-center gap-2 hover:text-red-500 transition">
             <Scissors size={16}/> Services
-          </a>
+          </Link>
 
-          <a href="/gallery" className="flex items-center gap-2 hover:text-red-500 transition">
+          <Link href="/gallery" className="flex items-center gap-2 hover:text-red-500 transition">
             <Image size={16}/> Gallery
-          </a>
+          </Link>
 
-          <a href="/booking" className="flex items-center gap-2 hover:text-red-500 transition">
+          <Link href="/booking" className="flex items-center gap-2 hover:text-red-500 transition">
             <Calendar size={16}/> Book
-          </a>
+          </Link>
 
-          <a href="/contact" className="flex items-center gap-2 hover:text-red-500 transition">
+          <Link href="/contact" className="flex items-center gap-2 hover:text-red-500 transition">
             <Phone size={16}/> Contact
-          </a>
+          </Link>
 
         </div>
 
