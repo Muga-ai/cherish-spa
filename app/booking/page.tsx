@@ -1,4 +1,25 @@
+"use client"
+
+import { useState } from "react"
+
 export default function Booking() {
+  const [name, setName] = useState("")
+  const [service, setService] = useState("")
+  const [date, setDate] = useState("")
+
+  const phone = "254700000000" // replace with your real number
+
+  const handleWhatsApp = () => {
+    const message = `Hello Cherish Spa,%0A%0A
+Name: ${name}%0A
+Service: ${service}%0A
+Preferred Date: ${date}%0A%0A
+I'd like to book an appointment.`
+
+    const url = `https://wa.me/${phone}?text=${message}`
+    window.open(url, "_blank")
+  }
+
   return (
     <section className="py-24 bg-black text-white min-h-screen">
       <div className="max-w-xl mx-auto px-6">
@@ -7,27 +28,19 @@ export default function Booking() {
           Book Appointment
         </h1>
 
-        <form className="space-y-6">
+        <div className="space-y-6">
 
           <input
             type="text"
             placeholder="Full Name"
+            onChange={(e) => setName(e.target.value)}
             className="w-full p-4 bg-zinc-900 rounded-xl outline-none"
           />
 
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full p-4 bg-zinc-900 rounded-xl outline-none"
-          />
-
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            className="w-full p-4 bg-zinc-900 rounded-xl outline-none"
-          />
-
-          <select className="w-full p-4 bg-zinc-900 rounded-xl">
+          <select
+            onChange={(e) => setService(e.target.value)}
+            className="w-full p-4 bg-zinc-900 rounded-xl"
+          >
             <option>Select Service</option>
             <option>Spa</option>
             <option>Salon</option>
@@ -36,14 +49,18 @@ export default function Booking() {
 
           <input
             type="date"
+            onChange={(e) => setDate(e.target.value)}
             className="w-full p-4 bg-zinc-900 rounded-xl"
           />
 
-          <button className="w-full bg-red-600 py-4 rounded-xl font-semibold hover:bg-red-500">
-            Confirm Booking
+          <button
+            onClick={handleWhatsApp}
+            className="w-full bg-green-600 py-4 rounded-xl font-semibold hover:bg-green-500"
+          >
+            Book via WhatsApp
           </button>
 
-        </form>
+        </div>
 
       </div>
     </section>
