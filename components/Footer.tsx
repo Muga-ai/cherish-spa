@@ -26,7 +26,7 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-4">Contact</h3>
           <p>📍 Nairobi, Kenya</p>
-          <p>📞 +254 700 000 000</p>
+          <p>📞 +254 724 758 120</p>
         </div>
       </div>
 
